@@ -40,7 +40,7 @@ public class BlogController {
         return "post-details";
     }
 
-    @GetMapping("/category/{id}")
+    @RequestMapping("/category/{id}")
     public String categoryList(@PathVariable Long id, ModelMap modelMap){
         Category category = categoryRepository.findById(id).orElse(null);
         modelMap.put("category",category);
